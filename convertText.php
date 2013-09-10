@@ -22,7 +22,7 @@ class ConvertText
 		$value = preg_replace($pattern, "\n", $value);
 		$pattern = "/<\/p>/";
 		$value = preg_replace($pattern, "", $value);
-		
+
 		$pattern = "/<p style=text-align:left>/";
 		$value = preg_replace($pattern, "", $value);
 		$pattern = "/<p style=text-align:right>/";
@@ -38,7 +38,7 @@ class ConvertText
 		$value = preg_replace($pattern, "", $value);
 		$pattern = "/style=(.*?)/";
 		$value = preg_replace($pattern, "", $value);
-		
+
 		$pattern = "/<span id=\"(.*?)\"(.*?)>/";
 		$value = preg_replace($pattern, "", $value);
 		$pattern = "/<span(.*?)>/";
@@ -60,18 +60,18 @@ class ConvertText
 		$value = preg_replace($pattern, "", $value);
 		$pattern = "/<ul><li>/";
 		$value = preg_replace($pattern, "", $value);
-		
+
 		$pattern = "/<a href>/";
 		$value = preg_replace($pattern, "", $value);
 		$pattern = "/<\/a>/";
 		$value = preg_replace($pattern, "", $value);
 		$pattern = "/target/";
 		$value = preg_replace($pattern, "", $value);
-		
+
 		$value = preg_replace("/<br>/", "\n", $value);
 		$value = preg_replace("/<p>/", "", $value);
 		$value = preg_replace("/<p >/", "", $value);
-		
+
 		$pattern = "/<em>/";
 		$value = preg_replace($pattern, "<i>", $value);
 		$pattern = "/<\/em>/";
@@ -89,15 +89,15 @@ class ConvertText
 		$value = preg_replace("/>/", "", $value);
 		$value = preg_replace("/\//", "", $value);*/
 
-		
+
 		/*
 		$value = preg_replace("/<strong/", "", $value);
 		//$value = preg_replace("/<span/", "", $value);
-		
+
 		$value = preg_replace("/<italic/", "", $value);
 		$value = preg_replace("/<underline/", "", $value);
 		*/
-		
+
 		// SPECIALE KARAKTERS TERUGPLAATSEN
 		$pattern = "/&#193;/";
 		$value = preg_replace($pattern, "Á", $value);
@@ -580,11 +580,11 @@ class ConvertText
 		$value = preg_replace($pattern, "Ζ", $value);
 		$pattern = "/&#950;/";
 		$value = preg_replace($pattern, "ζ", $value);
-		
+
 		// unclean ...
 		$pattern = "/\.\.\./";
 		$value = preg_replace($pattern, "...", $value);		   	
-		
+
 		// Remove extra white spaces
 		$pattern = "/&#8195;&#8195;/";
 		$value = preg_replace($pattern, "  ", $value);
@@ -600,7 +600,7 @@ class ConvertText
 		$value = preg_replace($pattern, "  ", $value);
 		$pattern = "/\  /";
 		$value = preg_replace($pattern, "  ", $value);
-		
+
 		// trademark, copyright, ...
 		$pattern = "/&trade;/";    
 		$value = preg_replace($pattern, "(tm)", $value);
@@ -608,11 +608,11 @@ class ConvertText
 		$value = preg_replace($pattern, "(c)", $value);
 		$pattern = "/&reg;/";    
 		$value = preg_replace($pattern, "(r)", $value);
-		
+
 		// apo$valueof
 		$pattern = "/&#39;/";
 		$value = preg_replace($pattern, "'", $value);
-		
+
 		// kijk en verwijder 1 spatie indien nodig
 		if(preg_match("/ /", $value)){
 			$value=ltrim($value);
@@ -638,7 +638,7 @@ class ConvertText
 		$value = preg_replace($pattern, "", $value);
 		$pattern = "/<\/TEXTFORMAT.*?>/";
 		$value = preg_replace($pattern, "", $value);
-		
+
 		$pattern = "/<P ALIGN='LEFT'>/";
 		$value = preg_replace($pattern, "<p style=\'text-align:left\'>", $value);
 		$pattern = "/<P ALIGN='RIGHT'>/";
@@ -649,46 +649,46 @@ class ConvertText
 		$value = preg_replace($pattern, "<p style=\'text-align:justify\'>", $value);
 		$pattern = "/<\/P>/";
 		$value = preg_replace($pattern, "</p>", $value);
-		
+
 		$pattern = "/<FONT ID='(.*?)'>/";
 		$value = preg_replace($pattern, "<span id=\'$1\'>", $value);
-		
+
 		$pattern = "/<FONT(.*?)>/";
 		$value = preg_replace($pattern, "<span style=\'\'>", $value);
 		//$value = preg_replace($pattern, "<span style=\'$1\'>", $value);
-		
+
 		$pattern = "/COLOR=\'(.*?)\'/";
 		$value = preg_replace($pattern, "", $value);
 		//$value = preg_replace($pattern, "color:$1", $value);
-		
+
 		$pattern = "/SIZE=\'(.*?)\'/";
 		$value = preg_replace($pattern, "", $value);
 		// $value = preg_replace($pattern, "font-size:$1px", $value);
-		
+
 		$pattern = "/FACE=\'(.*?)\'/";
 		$value = preg_replace($pattern, "", $value);
 		// $value = preg_replace($pattern, "font-family:$1", $value);
-		
+
 		$pattern = "/ALIGN=\'(.*?)\'/";
 		//$value = preg_replace($pattern, "", $value);
 		$value = preg_replace($pattern, "text-align:$1", $value);
-		
+
 		$pattern = "/LETTERSPACING=\'.*?\'/";
 		$value = preg_replace($pattern, "", $value);
-		
+
 		$pattern = "/KERNING=\'.*?\'/";
 		$value = preg_replace($pattern, "", $value);
-		
+
 		$pattern = "/<\/FONT.*?>/";
 		$value = preg_replace($pattern, "</span>", $value);
-		
+
 		$pattern = "/<\/LI><LI>/";
 		$value = preg_replace($pattern, "</li><li>", $value);
 		$pattern = "/<\/LI>/";
 		$value = preg_replace($pattern, "</li></ul>", $value);
 		$pattern = "/<LI>/";
 		$value = preg_replace($pattern, "<ul><li>", $value);
-		
+
 		$pattern = "/<I>/";
 		$value = preg_replace($pattern, "<em>", $value);
 		$pattern = "/<\/I>/";
@@ -701,15 +701,15 @@ class ConvertText
 		$value = preg_replace($pattern, "<u>", $value);
 		$pattern = "/<\/U>/";
 		$value = preg_replace($pattern, "</u>", $value);
-		
+
 		$pattern = "/<A HREF/";
 		$value = preg_replace($pattern, "<a href", $value);
 		$pattern = "/<\/A>/";
 		$value = preg_replace($pattern, "</a>", $value);
 		$pattern = "/TARGET/";
 		$value = preg_replace($pattern, "target", $value);
-		
-		return self::char($value, $value);
+
+		return self::char($value);
 	}
 
 	/**
@@ -1199,11 +1199,11 @@ class ConvertText
 		$value = preg_replace($pattern, "Ζ", $value);
 		$pattern = "/&#950;/";
 		$value = preg_replace($pattern, "ζ", $value);
-		
+
 		// unclean ...
 		$pattern = "/\.\.\./";
 		$value = preg_replace($pattern, "...", $value);		   	
-		
+
 		// Remove extra white spaces
 		$pattern = "/&#8195;&#8195;/";
 		$value = preg_replace($pattern, "  ", $value);
@@ -1219,7 +1219,7 @@ class ConvertText
 		$value = preg_replace($pattern, "  ", $value);
 		$pattern = "/\  /";
 		$value = preg_replace($pattern, "  ", $value);
-		
+
 		// trademark, copyright, ...
 		$pattern = "/&trade;/";    
 		$value = preg_replace($pattern, "(tm)", $value);
@@ -1227,7 +1227,7 @@ class ConvertText
 		$value = preg_replace($pattern, "(c)", $value);
 		$pattern = "/&reg;/";    
 		$value = preg_replace($pattern, "(r)", $value);
-		
+
 		// apo$valueof
 		$pattern = "/&#39;/";
 		$value = preg_replace($pattern, "'", $value);
@@ -1245,7 +1245,7 @@ class ConvertText
 		// OMZETTEN VAN SPECIALE KARAKTERS NAAR TEKST
 		/*$pattern = "/\&/";
 		$value = preg_replace($pattern, "&#38", $value);*/
-		
+
 		$pattern = "/\Á/";
 		$value = preg_replace($pattern, "&#193;", $value);
 		$pattern = "/\á/";
@@ -2239,7 +2239,7 @@ class ConvertText
 	
 		$pattern = "/&ccedil;/";
 		$value = preg_replace($pattern, "&#231;", $value); // ç
-		
+
 		$pattern = "/&eacute;/";
 		$value = preg_replace($pattern, "&#233;", $value); // é
 		$pattern = "/&Eacute;/";
