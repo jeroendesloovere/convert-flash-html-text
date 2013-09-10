@@ -709,7 +709,7 @@ class ConvertText
 		$pattern = "/TARGET/";
 		$value = preg_replace($pattern, "target", $value);
 		
-		return char($value, $value);
+		return self::char($value, $value);
 	}
 
 	/**
