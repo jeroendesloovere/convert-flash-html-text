@@ -4,7 +4,7 @@ This ConvertText PHP class allows you to convert between Adobe Flash/Flex htmlTe
 
 ## About
 
-When using an htmlText field in Flash or Flex (Flash Builder). Flash has its own way to define html text. Thats why [I](http://github.com/deslooverej) wrote this class to convert this htmlText to pure html that I can save in the database to use on my website.
+When using a htmlText field in Flash or Flex (Flash Builder). Flash has its own way to define html text. Thats why [I](http://github.com/deslooverej) wrote this class to convert the result htmlText to pure html so I can save that in the database and use it on the website as it should be.
 
 ## Work in progress
 
