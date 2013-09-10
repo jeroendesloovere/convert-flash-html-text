@@ -1,6 +1,6 @@
 # Convert Flash HTML Text
 
-This ConvertText PHP class allows you to convert between Flash htmlText and html.
+This ConvertText PHP class allows you to convert between Adobe Flash/Flex htmlText and html.
 
 ## About
 
